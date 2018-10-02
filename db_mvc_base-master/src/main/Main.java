@@ -20,6 +20,7 @@ public class Main {
     public static void main(String[] args) {
         ModelAgenda modelAgenda = new ModelAgenda();
         ViewAgenda viewAgenda = new ViewAgenda();
+        ControllerAgenda controllerAgenda = new ControllerAgenda(modelAgenda, viewAgenda);
     }
     
 }
