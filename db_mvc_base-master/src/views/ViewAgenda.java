@@ -1,12 +1,12 @@
 package views;
 
+import models.modelImage;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author Zeo
@@ -29,76 +29,123 @@ public class ViewAgenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jl_nombre = new javax.swing.JLabel();
-        jl_email = new javax.swing.JLabel();
-        jtf_nombre = new javax.swing.JTextField();
-        jtf_email = new javax.swing.JTextField();
-        jbtn_primero = new javax.swing.JButton();
-        jbtn_anterior = new javax.swing.JButton();
-        jbtn_siguiente = new javax.swing.JButton();
+        jPanelFondo = new javax.swing.JPanel();
+        jPanelComponents = new javax.swing.JPanel();
         jbtn_ultimo = new javax.swing.JButton();
+        jbtn_siguiente = new javax.swing.JButton();
+        jbtn_anterior = new javax.swing.JButton();
+        jbtn_primero = new javax.swing.JButton();
+        jl_email = new javax.swing.JLabel();
+        jtf_email = new javax.swing.JTextField();
+        jtf_nombre = new javax.swing.JTextField();
+        jl_nombre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 400));
 
-        jl_nombre.setText("Nombre");
+        jPanelFondo.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jPanelFondoPropertyChange(evt);
+            }
+        });
 
-        jl_email.setText("Email");
-
-        jbtn_primero.setText("|<");
-
-        jbtn_anterior.setText("<<");
-
-        jbtn_siguiente.setText(">>");
+        jPanelComponents.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanelComponents.setOpaque(false);
 
         jbtn_ultimo.setText(">|");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+        jbtn_siguiente.setText(">>");
+
+        jbtn_anterior.setText("<<");
+
+        jbtn_primero.setText("|<");
+
+        jl_email.setForeground(new java.awt.Color(255, 255, 255));
+        jl_email.setText("Email:");
+
+        jl_nombre.setForeground(new java.awt.Color(255, 255, 255));
+        jl_nombre.setText("Nombre:");
+
+        javax.swing.GroupLayout jPanelComponentsLayout = new javax.swing.GroupLayout(jPanelComponents);
+        jPanelComponents.setLayout(jPanelComponentsLayout);
+        jPanelComponentsLayout.setHorizontalGroup(
+            jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComponentsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_nombre)
+                    .addComponent(jl_email))
+                .addGap(20, 20, 20)
+                .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanelComponentsLayout.createSequentialGroup()
                         .addComponent(jbtn_primero)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbtn_anterior)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtn_siguiente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jbtn_ultimo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_nombre)
-                            .addComponent(jl_email))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(101, Short.MAX_VALUE))
+                    .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanelComponentsLayout.setVerticalGroup(
+            jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComponentsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_nombre)
                     .addComponent(jtf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_email)
                     .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelComponentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbtn_primero)
                     .addComponent(jbtn_anterior)
                     .addComponent(jbtn_siguiente)
                     .addComponent(jbtn_ultimo))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanelFondoLayout = new javax.swing.GroupLayout(jPanelFondo);
+        jPanelFondo.setLayout(jPanelFondoLayout);
+        jPanelFondoLayout.setHorizontalGroup(
+            jPanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFondoLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jPanelComponents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(310, Short.MAX_VALUE))
+        );
+        jPanelFondoLayout.setVerticalGroup(
+            jPanelFondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFondoLayout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jPanelComponents, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPanelFondoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jPanelFondoPropertyChange
+        models.modelImage imagenMenu = new modelImage();
+        jPanelFondo.add(imagenMenu);
+        jPanelFondo.repaint();
+    }//GEN-LAST:event_jPanelFondoPropertyChange
 
     /**
      * @param args the command line arguments
@@ -136,6 +183,8 @@ public class ViewAgenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelComponents;
+    private javax.swing.JPanel jPanelFondo;
     public javax.swing.JButton jbtn_anterior;
     public javax.swing.JButton jbtn_primero;
     public javax.swing.JButton jbtn_siguiente;
